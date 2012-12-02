@@ -1,5 +1,8 @@
 require 'gosu'
 require_relative 'config'
+
+require_relative 'lib/entities/entity'
+
 require_relative 'lib/game'
 
 module Airstrike
@@ -7,7 +10,7 @@ module Airstrike
 
 		attr_accessor :game
 
-	  def initialize()
+	  	def initialize()
 		  super(WIDTH, HEIGHT, FULLSCREEN)
 			self.caption = "Airstrike"
 			@game = Game.new(self)
