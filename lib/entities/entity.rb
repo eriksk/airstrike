@@ -14,6 +14,14 @@ module Airstrike
 			@image = image
 		end
 
+		def contains?(x, y)
+			false
+		end
+
+		def contains?(entity)
+			false
+		end
+
 		def set_position x, y
 			@position.x, @position.y = x, y
 			self

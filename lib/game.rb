@@ -14,15 +14,25 @@ module Airstrike
 				.set_position(WIDTH / 2.0, HEIGHT - (24 / 2.0))
 
 			@clouds = Clouds.new(Airstrike::load_image(@game_window, 'cloud'))
+
+			@tank = Tank.new(Airstrike::load_image(@game_window, 'tank'))
+				.set_velocity(-0.1, 0.0)
+				.set_position(800, HEIGHT - 64)
+				.set_scale(0.3)
 		end
 
 		def update(dt)
 			@clouds.update dt
+			@tank.update dt
 		end
 
 		def draw
 			@game_window.clear(@background_color)
 			@clouds.draw
+
+			@tank.draw
+
+
 			@ground_pieces.each{ |i| i.draw }
 		end
 	end

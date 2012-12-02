@@ -17,8 +17,8 @@ module Airstrike
 		def update dt
 			@clouds.each{|i| 
 				i.update dt
-				if i.position.x > 800.0
-					i.position.x = 0.0
+				if i.position.x + i.image.width > 800
+					i.position.x = -i.image.width
 				end
 			}
 		end
