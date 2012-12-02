@@ -5,6 +5,7 @@ require_relative 'lib/utils/utils'
 require_relative 'lib/utils/vec2'
 
 require_relative 'lib/entities/entity'
+require_relative 'lib/entities/clouds'
 
 require_relative 'lib/game'
 

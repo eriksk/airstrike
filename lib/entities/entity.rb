@@ -18,6 +18,12 @@ module Airstrike
 			@position.x, @position.y = x, y
 			self
 		end
+
+		def set_velocity x, y
+			@velocity.x, @velocity.y = x, y
+			self
+		end
+
 		def set_rotation rotation
 			@rotation = rotation
 			self
@@ -27,8 +33,14 @@ module Airstrike
 			@scale.x, @scale.y = x, y
 			self
 		end
+		def set_scale scale
+			@scale.x, @scale.y = scale, scale
+			self
+		end
 
 		def update dt
+			@position.x += @velocity.x * dt
+			@position.y += @velocity.y * dt
 		end		
 
 		def draw
