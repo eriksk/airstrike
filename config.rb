@@ -1,6 +1,6 @@
 module Airstrike
-	WIDTH = 800
-	HEIGHT = 600
+	WIDTH = 960
+	HEIGHT = 640
 	FULLSCREEN = false
 
 	CONTENT_PATH = "content/"
