@@ -26,6 +26,17 @@ Prototype for an iPhone game made in Ruby/Gosu
 ### Stages
 * 10 Worlds
 	* 10 Stages
+* Each world has a different setting and theme
+
+### Graphics
+* Style
+	* Cartoony
+	* Funny
+* Effects
+	* Explosions
+	* Smoke
+	* Projectiles
+	* Trails
 
 ### Levels
 * Gold
@@ -50,6 +61,7 @@ Prototype for an iPhone game made in Ruby/Gosu
 * Game over scene
 * Game result scene
 * Select level scene
+* Juice
 
 ### Working on
 * Tank
