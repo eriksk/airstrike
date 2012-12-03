@@ -36,7 +36,9 @@ Prototype for an iPhone game made in Ruby/Gosu
 * Twitter?
 * Facebook?
 
-## Backlog
+## Progress
+
+### Backlog
 * Audio
 * Aircraft
 * Missiles
@@ -49,8 +51,8 @@ Prototype for an iPhone game made in Ruby/Gosu
 * Game result scene
 * Select level scene
 
-## Working on
+### Working on
 * Tank
 
-## Done
+### Done
 * Base scene
