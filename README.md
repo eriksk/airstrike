@@ -11,6 +11,7 @@ Prototype for an iPhone game made in Ruby/Gosu
 * Wind
 * Screen size 4 x iphone, try what works...
 * Tiled for maps
+* Be very sure to show how each new fature works, think mario, super meat boy etc.
 
 ### Weapons
 * Missile
