@@ -76,7 +76,8 @@ Prototype for an iPhone game made in Ruby/Gosu
 
 ### Working on
 * Tank
-* Drawable arcs
+* Planes
 
 ### Done
 * Base scene
+* Drawable arcs
