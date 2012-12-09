@@ -44,7 +44,7 @@
      showgrid="false"
      inkscape:window-width="1499"
      inkscape:window-height="956"
-     inkscape:window-x="58"
+     inkscape:window-x="72"
      inkscape:window-y="22"
      inkscape:window-maximized="0" />
   <metadata
@@ -65,7 +65,10 @@
      id="layer1">
     <g
        id="g3779"
-       transform="matrix(0.21747573,0,0,0.21747573,7.094862,89.063553)">
+       transform="matrix(0.21747573,0,0,0.21747573,7.094862,89.063553)"
+       inkscape:export-filename="/Users/erikskoglund/Documents/ruby/airstrike/assets/blob_yellow.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <path
          transform="translate(-5.555839,40.911178)"
          d="m 345.71428,489.50504 c 0,37.87095 -30.70047,68.57142 -68.57143,68.57142 -37.87095,0 -68.57142,-30.70047 -68.57142,-68.57142 0,-37.87096 30.70047,-68.57143 68.57142,-68.57143 37.87096,0 68.57143,30.70047 68.57143,68.57143 z"
