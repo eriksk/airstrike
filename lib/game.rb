@@ -19,11 +19,21 @@ module Airstrike
 				.set_velocity(-0.1, 0.0)
 				.set_position(800, HEIGHT - 64)
 				.set_scale(0.3)
+
+			@arc = Arc.new(CENTER)
+			@blob_yellow = Airstrike::load_image(@game_window, 'blob_yellow')
+
+			@cursor = Entity.new Airstrike::load_image(@game_window, 'blob_yellow')
 		end
 
 		def update(dt)
 			@clouds.update dt
 			@tank.update dt
+
+			@cursor.set_position(@game_window.mouse_x, @game_window.mouse_y)
+
+			@arc.end_point.x = @game_window.mouse_x
+			@arc.end_point.y = @game_window.mouse_y
 		end
 
 		def draw
@@ -32,8 +42,11 @@ module Airstrike
 
 			@tank.draw
 
-
 			@ground_pieces.each{ |i| i.draw }
+
+			@arc.draw @blob_yellow
+
+			@cursor.draw
 		end
 	end
 end

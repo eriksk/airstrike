@@ -6,4 +6,8 @@ module Airstrike
 	def Airstrike.to_degrees radiens
 		radiens * 180 / Math::PI
 	end
+
+	def Airstrike.lerp x, y, w
+		x + (y - x) * w		
+	end
 end

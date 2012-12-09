@@ -51,6 +51,7 @@ Prototype for an iPhone game made in Ruby/Gosu
 ## Progress
 
 ### Backlog
+* In game gamestates (intro, freeze, place attacks, play, finish. Something like that.)
 * Audio
 * Aircraft
 * Missiles
@@ -64,8 +65,18 @@ Prototype for an iPhone game made in Ruby/Gosu
 * Select level scene
 * Juice
 
+### Backlog.Content
+* Define a good color scheme
+* Mini cloud for arcs
+* Tank
+* Missile
+* +1 (for scoring hits etc)
+* GUI
+* 
+
 ### Working on
 * Tank
+* Drawable arcs
 
 ### Done
 * Base scene
