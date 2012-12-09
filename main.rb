@@ -5,6 +5,7 @@ require_relative 'lib/utils/utils'
 require_relative 'lib/utils/vec2'
 
 require_relative 'lib/paths/arc'
+require_relative 'lib/paths/arc_factory'
 
 require_relative 'lib/entities/entity'
 require_relative 'lib/entities/clouds'

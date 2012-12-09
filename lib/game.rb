@@ -20,9 +20,10 @@ module Airstrike
 				.set_position(800, HEIGHT - 64)
 				.set_scale(0.3)
 
-			@arc = Arc.new(CENTER)
-			@blob_yellow = Airstrike::load_image(@game_window, 'blob_yellow')
+			@arcs = []
+			@arc_factory = ArcFactory.new
 
+			@blob_yellow = Airstrike::load_image(@game_window, 'blob_yellow')
 			@cursor = Entity.new Airstrike::load_image(@game_window, 'blob_yellow')
 		end
 
@@ -32,8 +33,12 @@ module Airstrike
 
 			@cursor.set_position(@game_window.mouse_x, @game_window.mouse_y)
 
-			@arc.end_point.x = @game_window.mouse_x
-			@arc.end_point.y = @game_window.mouse_y
+			if @game_window.button_down? Gosu::MsLeft
+				@arc_factory.start Vec2.new(@game_window.mouse_x, @game_window.mouse_y) unless @arc_factory.started?
+				@arc_factory.move @game_window.mouse_x, @game_window.mouse_y
+			else
+				@arcs << @arc_factory.done if @arc_factory.started?
+			end
 		end
 
 		def draw
@@ -41,10 +46,11 @@ module Airstrike
 			@clouds.draw
 
 			@tank.draw
-
 			@ground_pieces.each{ |i| i.draw }
 
-			@arc.draw @blob_yellow
+			@arcs.each{ |a| a.draw @blob_yellow }
+
+			@arc_factory.draw_preview @blob_yellow
 
 			@cursor.draw
 		end

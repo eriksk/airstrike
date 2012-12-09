@@ -22,5 +22,9 @@ module Airstrike
 		def *(scalar)
 			Vec2.new(self.x * scalar, self.y * scalar)
 		end
+
+		def clone
+			Vec2.new(self.x, self.y)
+		end
 	end
 end
