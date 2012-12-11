@@ -27,6 +27,9 @@ module Airstrike
 			@cursor = Entity.new Airstrike::load_image(@game_window, 'blob_yellow')
 
 			@particle_system = ParticleSystem.new Airstrike::load_image(@game_window, 'blob_yellow')
+
+			@missile = Missile.new Airstrike::load_image(@game_window, 'missile'), Airstrike::load_image(@game_window, 'blob_yellow')
+			@missile.set_scale 0.3
 		end
 
 		def update(dt)
@@ -43,6 +46,8 @@ module Airstrike
 			end
 
 			@particle_system.update dt
+
+			@missile.update dt
 		end
 
 		def draw
@@ -54,9 +59,11 @@ module Airstrike
 
 			@arcs.each{ |a| a.draw @blob_yellow }
 
-			@particle_system.draw
+			#@particle_system.draw
 			
 			@arc_factory.draw_preview @blob_yellow
+
+			@missile.draw
 
 			@cursor.draw
 		end

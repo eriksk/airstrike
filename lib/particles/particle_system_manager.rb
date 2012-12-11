@@ -1,6 +1,7 @@
 module Airstrike
 	class ParticleSystemManager
 
+		# TODO: test this class
 		attr_accessor :particle_systems
 
 		def initialize

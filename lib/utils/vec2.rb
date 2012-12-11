@@ -7,6 +7,24 @@ module Airstrike
 			@x, @y = x, y
 		end
 
+		def direction
+			Math::atan2(@y, @x)
+		end
+
+		def *(scalar)
+			Vec2.new(self.x * scalar, self.y * scalar)
+		end
+
+		def length
+			# TODO:
+		end
+
+		def clone
+			Vec2.new(self.x, self.y)
+		end
+
+		# class defs
+
 		def self.zero
 			Vec2.new
 		end
@@ -19,12 +37,5 @@ module Airstrike
 			Math::atan2(v2.y - v1.y, v2.x - v1.x)			
 		end
 
-		def *(scalar)
-			Vec2.new(self.x * scalar, self.y * scalar)
-		end
-
-		def clone
-			Vec2.new(self.x, self.y)
-		end
 	end
 end

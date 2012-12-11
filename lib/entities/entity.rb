@@ -47,11 +47,24 @@ module Airstrike
 		end
 
 		def update dt
+			before_update dt
 			@position.x += @velocity.x * dt
 			@position.y += @velocity.y * dt
+			after_update dt
 		end		
 
+		def before_update dt
+		end
+		def after_update dt
+		end
+
+		def before_draw
+		end
+		def after_draw
+		end
+
 		def draw
+			before_draw
 			if @image
 				@image.draw_rot(
 					@position.x, @position.y, 
@@ -62,6 +75,7 @@ module Airstrike
 					@color, 
 					@mode)
 			end
+			after_draw
 		end		
 	end
 end

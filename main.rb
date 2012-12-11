@@ -12,8 +12,12 @@ require_relative 'lib/entities/clouds'
 require_relative 'lib/entities/vehicle'
 require_relative 'lib/entities/tank'
 
+require_relative 'lib/entities/weapon'
+require_relative 'lib/entities/missile'
+
 require_relative 'lib/particles/particle'
 require_relative 'lib/particles/particle_system'
+require_relative 'lib/particles/smoke_trail_particle_system'
 
 require_relative 'lib/game'
 
