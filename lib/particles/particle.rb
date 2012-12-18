@@ -28,14 +28,14 @@ module Airstrike
 
 		def set_velocities(start_x, start_y, end_x, end_y)
 			case @space
-			when :world
-				@start_velocity.x, @start_velocity.y = start_x, start_y
-				@end_velocity.x, @end_velocity.y = end_x, end_y
-			when :local
-				local_speed = @start_velocity.length
-				@start_velocity.x, @start_velocity.y = start_x + (Math::cos(@parent.rotation) * local_speed), start_y + (Math::sin(@parent.rotation) * local_speed)
-				@end_velocity.x, @end_velocity.y = end_x + (Math::cos(@parent.rotation) * local_speed), end_y + (Math::sin(@parent.rotation) * local_speed)
-				end
+				when :world
+					@start_velocity.x, @start_velocity.y = start_x, start_y
+					@end_velocity.x, @end_velocity.y = end_x, end_y
+				when :local
+					local_speed = @start_velocity.length
+					@start_velocity.x, @start_velocity.y = start_x + (Math::cos(@parent.rotation) * local_speed), start_y + (Math::sin(@parent.rotation) * local_speed)
+					@end_velocity.x, @end_velocity.y = end_x + (Math::cos(@parent.rotation) * local_speed), end_y + (Math::sin(@parent.rotation) * local_speed)
+			end
 			self
 		end
 

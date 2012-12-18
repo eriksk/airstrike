@@ -26,7 +26,6 @@ module Airstrike
 			@blob_yellow = Airstrike::load_image(@game_window, 'blob_yellow')
 			@cursor = Entity.new Airstrike::load_image(@game_window, 'blob_yellow')
 
-			@particle_system = ParticleSystem.new Airstrike::load_image(@game_window, 'blob_yellow')
 
 			@missile = Missile.new Airstrike::load_image(@game_window, 'missile'), Airstrike::load_image(@game_window, 'blob_yellow')
 			@missile.set_scale 0.3
@@ -44,8 +43,6 @@ module Airstrike
 			else
 				@arcs << @arc_factory.done if @arc_factory.started?
 			end
-
-			@particle_system.update dt
 
 			@missile.update dt
 		end
