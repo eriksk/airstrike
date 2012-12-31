@@ -2,6 +2,9 @@
 
 Prototype for an iPhone game made in Ruby/Gosu
 
+## Project TODO
+* test [releasy](https://github.com/Spooner/releasy/)
+
 ## Ideas
 * Pull from plane to target
 * Physics
