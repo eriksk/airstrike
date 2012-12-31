@@ -72,7 +72,6 @@ Prototype for an iPhone game made in Ruby/Gosu
 * Missile
 * +1 (for scoring hits etc)
 * GUI
-* 
 
 ### Working on
 * Tank

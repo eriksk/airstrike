@@ -12,6 +12,10 @@ require_relative 'lib/entities/clouds'
 require_relative 'lib/entities/vehicle'
 require_relative 'lib/entities/tank'
 
+require_relative 'lib/entities/plane'
+
+require_relative 'lib/stages/stage'
+
 require_relative 'lib/entities/weapon'
 require_relative 'lib/entities/missile'
 

@@ -11,10 +11,6 @@ module Airstrike
 		radiens * 180 / Math::PI
 	end
 
-	def Airstrike.lerp x, y, w
-		x + (y - x) * w		
-	end
-
 	def Airstrike.wrap_angle(angle)
 		while angle > Airstrike::to_radians(360.0)
 			angle -= Airstrike::to_radians(360.0)
@@ -23,5 +19,30 @@ module Airstrike
 			angle += Airstrike::to_radians(360.0)
 		end
 		angle
+	end
+
+	# linear interpolation
+	def Airstrike.lerp x, y, w
+		x + (y - x) * w		
+	end
+
+	# cubic interpolation using a hermite spline
+	def Airstrike.qlerp(min, max, weight)
+		hermite(min, 0.0, max, 0.0, weight)
+	end
+
+	# value1, tangent1, value2, tangent2
+	def Airstrike.hermite(v1, t1, v2, t2, weight)
+		sCubed = weight * weight * weight
+		sSquared = weight * weight
+		result = 0.0
+		if weight == 0.0
+			result = v1
+		elsif weight == 1.0
+			result = v2
+		else
+			result = (2 * v1 - 2 * v2 + t2 + t1) * sCubed + (3 * v2 - 3 * v1 - 2 * t1 - t2) * sSquared + t1 * weight + v1
+		end
+	    result
 	end
 end
