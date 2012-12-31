@@ -13,7 +13,7 @@ module Airstrike
 
 			# timers
 			@current = 0.0
-			@duration = 6 * 1000 # TODO: time from tiled
+			@duration = 2 * 1000 # TODO: time from tiled
 
 			@background_color = Gosu::Color::BLUE
 			@background_color.red = 100
@@ -31,15 +31,15 @@ module Airstrike
 
 			@planes = []
 			@planes << create_plane(game_window)
-			@planes << create_plane(game_window, 0, 100)
-			@planes << create_plane(game_window, -100, 300)
+			@planes << create_plane(game_window, 0, 100, 800, 100)
+			@planes << create_plane(game_window, -100, 300, 800, 300)
 
 		end
 
-		def create_plane game_window, x = -200, y = 200, vel_x = 0.2, vel_y = 0
+		def create_plane game_window, start_x = -200, start_y = 200, end_x = 800, end_y = 200
 			Plane.new(Airstrike::load_image(game_window, 'plane'),
-				Vec2.new(x, y),
-				Vec2.new(WIDTH, 200))
+				Vec2.new(start_x, start_y),
+				Vec2.new(end_x, end_y))
 				.set_scale(0.5)
 		end
 

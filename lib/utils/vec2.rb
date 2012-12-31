@@ -37,5 +37,10 @@ module Airstrike
 			Math::atan2(v2.y - v1.y, v2.x - v1.x)			
 		end
 
+		def self.lerp v1, v2, progress
+			Vec2.new(
+				Airstrike::lerp(v1.x, v2.x, progress),
+				Airstrike::lerp(v1.y, v2.y, progress))
+		end
 	end
 end
