@@ -16,11 +16,12 @@ module Airstrike
 			planes = json['planes']
 			enemies = json['enemies']
 			setting = json['setting']
+			stop = json['stop'].to_f
 
 			puts "Loading stage #{name}..."
 
 			stage = Stage.new
-			stage.load(game_window)
+			stage.load(game_window, stop)
 
 			planes.each do |plane|
 				start_x =  plane['start']['x'].to_i
@@ -28,6 +29,13 @@ module Airstrike
 				end_x =  plane['end']['x'].to_i
 				end_y =  plane['end']['y'].to_i
 				stage.add_plane(game_window, start_x, start_y, end_x, end_y)
+			end
+
+			enemies.each do |e|
+				x = e['x'].to_i
+				y = e['y'].to_i
+				type = e['type']
+				stage.add_enemy(game_window, type, x, y)
 			end
 
 			puts "done"

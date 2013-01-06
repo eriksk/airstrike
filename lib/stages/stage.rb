@@ -9,25 +9,21 @@ module Airstrike
 		def initialize
 			@enemies = []
 			@planes = []
+			@stop = 0.0
 		end
 
-		def load game_window
+		def load game_window, stop
 
 			# timers
 			@current = 0.0
 			@duration = 2 * 1000 # TODO: time from tiled
+			@stop = stop
 
 			@background_color = Gosu::Color::BLUE
 			@background_color.red = 100
 			@background_color.green = 150
 			
 			@clouds = Clouds.new(Airstrike::load_image(game_window, 'cloud'))
-
-			# TODO: load from tiled, and place and set velocity
-			@enemies << Tank.new(Airstrike::load_image(game_window, 'tank'))
-				.set_position(WIDTH - 100, HEIGHT - 100)
-				.set_velocity(rand() * -0.2, 0.0)
-				.set_scale(0.3)
 		end
 
 		def add_plane game_window, start_x, start_y, end_x, end_y
@@ -37,16 +33,25 @@ module Airstrike
 				.set_scale(0.5)
 		end
 
+		def add_enemy game_window, type, x, y
+			# TODO: type
+			enemies << Tank.new(Airstrike::load_image(game_window, 'tank'))
+				.set_position(x, y)
+				.set_velocity(-0.05, 0.0)
+				.set_scale(0.3)			
+		end
+
 		def progress
 			@current / @duration
 		end
 		
 		def update dt
-			@current += dt
-
-			@clouds.update dt
-			@enemies.each { |e| e.update dt  }
-			@planes.each { |e| e.update dt, progress  }
+			if @current < @stop
+				@current += dt
+				@clouds.update dt
+				@enemies.each { |e| e.update dt  }
+				@planes.each { |e| e.update dt, progress  }
+			end
 		end
 		
 		def draw game_window
