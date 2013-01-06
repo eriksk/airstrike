@@ -80,3 +80,7 @@ Prototype for an iPhone game made in Ruby/Gosu
 ### Done
 * Base scene
 * Drawable arcs
+* Stageloader
+* Stages
+* Planes
+* Tanks
