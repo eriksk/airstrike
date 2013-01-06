@@ -15,6 +15,7 @@ require_relative 'lib/entities/tank'
 require_relative 'lib/entities/plane'
 
 require_relative 'lib/stages/stage'
+require_relative 'lib/stages/stage_loader'
 
 require_relative 'lib/entities/weapon'
 require_relative 'lib/entities/missile'
@@ -32,7 +33,7 @@ module Airstrike
 
 	  	def initialize()
 		  super(WIDTH, HEIGHT, FULLSCREEN)
-			self.caption = "Airstrike"
+			self.caption = TITLE
 			@game = Game.new(self)
 		end
 

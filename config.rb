@@ -4,6 +4,7 @@ module Airstrike
 	WIDTH = 960
 	HEIGHT = 640
 	FULLSCREEN = false
+	TITLE = "Airstrike"
 
 	CONTENT_PATH = "content/"
 	GFX_PATH = CONTENT_PATH + "gfx/"
